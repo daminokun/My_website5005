@@ -1,0 +1,356 @@
+/* ==========================================
+   1. GAYA ASAS & LAYOUT (DESKTOP FIRST)
+   ========================================== */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #1e293b;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+    font-size: 1.8rem;
+}
+
+/* ==========================================
+   2. NAVIGASI (MENU)
+   ========================================== */
+nav {
+    background-color: #1e293b;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav a {
+    color: #cbd5e1;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffffff;
+    background-color: #334155;
+    border-radius: 4px;
+}
+
+nav a.active {
+    color: #38bdf8;
+    font-weight: bold;
+}
+
+/* ==========================================
+   3. KANDUNGAN UTAMA
+   ========================================== */
+main {
+    flex: 1;
+    max-width: 800px;
+    width: 90%;
+    margin: 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hero {
+    text-align: center;
+    padding: 30px 0;
+    border-bottom: 1px solid #e2e8f0;
+    margin-bottom: 25px;
+}
+
+/* Kotak pembungkus gambar */
+.profile-container {
+    width: 300px;          /* Tetapkan lebar bulatan */
+    height: 300px;         /* Tetapkan tinggi bulatan (Mesti sama dengan lebar) */
+    margin: 0 auto 15px auto; /* Letakkan di tengah dan beri jarak bawah */
+    border-radius: 50%;    /* Ini kod wajib untuk potong kotak jadi bulat */
+    border: 4px solid #38bdf8; /* Border biru terang seperti dalam lakaran */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Kesan bayang lembut */
+    overflow: hidden;      /* Memastikan gambar di dalam tidak terkeluar dari bulatan */
+    background-color: #cbd5e1; /* Warna asas sementara jika gambar lambat load */
+}
+
+/* Gaya khusus untuk gambar muka */
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;     /* Trik penting: Gambar tidak akan penyek walaupun saiz asal petak */
+    object-position: center; /* Fokuskan potongan gambar di bahagian tengah (muka) */
+}
+
+.sub-tajuk {
+    font-size: 1.2rem;
+    color: #64748b;
+    margin-top: 5px;
+}
+
+.statistik-section {
+    display: flex;
+    justify-content: space-around;
+    background: #1e293b;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 25px 0;
+    text-align: center;
+}
+.stat-kotak {
+    display: flex;
+    flex-direction: column;
+}
+.stat-nombor {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #38bdf8;
+}
+.stat-label {
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+@media screen and (max-width: 600px) {
+    .statistik-section {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+.quote-section {
+    background-color: #f1f5f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 30px;
+    border-left: 4px solid #38bdf8;
+    font-style: italic;
+    text-align: center;
+}
+.quote-section cite {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.85em;
+    color: #64748b;
+    font-weight: bold;
+    font-style: normal;
+}
+h2 {
+    border-bottom: 2px solid #38bdf8;
+    padding-bottom: 8px;
+    color: #1e293b;
+}
+
+/* ==========================================
+   4. STRUKTUR KAD KEMAHIRAN (PREVIEW GAMBAR)
+   ========================================== */
+.kad-kemahiran {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.pautan-kad {
+    text-decoration: none;
+    color: inherit;
+    flex: 1;       
+    display: flex; 
+} /* <-- Telah dibetulkan kurungan di sini */
+
+.kad {
+    flex: 1;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;    
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+/* Kawasan Gambar Preview */
+.kad-gambar {
+    width: 100%;
+    height: 150px;       
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e2e8f0;
+    overflow: hidden;
+}
+
+.kad-gambar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   
+    transition: transform 0.3s ease;
+}
+
+/* Kawasan Teks Kad */
+.kad-teks {
+    padding: 15px;
+    text-align: center;
+}
+
+.kad-teks h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.1em;
+    color: #1e293b;
+}
+
+.kad-teks p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #64748b;
+}
+
+/* Kesan Hover pada Kad */
+.pautan-kad:hover .kad {
+    transform: translateY(-8px); 
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1); 
+    border-color: #38bdf8; 
+}
+
+.pautan-kad:hover .kad-gambar img {
+    transform: scale(1.05); 
+}
+/*untuk bahagian timeline*/
+.timeline-section {
+    margin-top: 40px;
+}
+.timeline {
+    border-left: 3px solid #38bdf8;
+    padding-left: 20px;
+    margin-left: 10px;
+}
+.timeline-item {
+    margin-bottom: 25px;
+    position: relative;
+}
+/* Buat titik bulat pada garisan */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -27px;
+    top: 5px;
+    background: #1e293b;
+    border: 3px solid #38bdf8;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+.timeline-item .tahun {
+    font-weight: bold;
+    color: #38bdf8;
+    font-size: 0.9rem;
+}
+.timeline-item h3 {
+    margin: 5px 0;
+    font-size: 1.1rem;
+    color: #1e293b;
+}
+/* ==========================================
+   5. BORANG HUBUNGI & BUTANG
+   ========================================== */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0 20px 0;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background-color: #f8f9fa;
+    box-sizing: border-box;
+    resize: none;
+}
+
+input[type="text"]:focus, textarea:focus {
+    border-color: #38bdf8;
+    outline: none;
+    background-color: #ffffff;
+}
+
+button, button[type="submit"] {
+    background-color: #38bdf8;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    width: 100%; 
+    margin-top: 15px;
+    transition: background 0.2s;
+}
+
+button:hover, button[type="submit"]:hover {
+    background-color: #0284c7;
+}
+
+/* ==========================================
+   6. FOOTER
+   ========================================== */
+footer {
+    background-color: #1e293b;
+    color: #94a3b8;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+/* ==========================================
+   7. REKA BENTUK MOBILE VIEW (PALING BAWAH)
+   ========================================== */
+@media screen and (max-width: 600px) {
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    nav {
+        text-align: center;
+    }
+
+    nav a {
+        display: block; 
+        margin: 8px 0; 
+        padding: 10px;
+        background-color: #334155; 
+        border-radius: 6px;
+    }
+
+    main {
+        padding: 15px;
+        margin: 15px auto;
+        width: 95%;
+    }
+
+    .kad-kemahiran {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
