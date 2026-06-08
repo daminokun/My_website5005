@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const btnSelamatDatang = document.getElementById("btnSelamatDatang");
     if (btnSelamatDatang) {
         btnSelamatDatang.addEventListener("click", function () {
-            alert("Terima kasih datang singgah! website saya simple je.");
+            alert("Terima kasih datang singgah! Website saya simple je.");
         });
     }
 
