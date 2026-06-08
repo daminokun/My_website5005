@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (borangHubungi) {
         borangHubungi.addEventListener("submit", function (event) {
             // Stop browser dari refresh bila tekan button submit supaya boleh keluar popup
-           // event.preventDefault(); 
+           event.preventDefault(); 
             
             // Ambil data dari nama dan input kat popup
             const nama = document.getElementById("nama").value;
